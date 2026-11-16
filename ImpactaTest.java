@@ -22,10 +22,10 @@ class ImpactaTest {
     void pontuacaoPolimorficaDasTresAcoes() {
         LocalDateTime d = LocalDateTime.parse(DATA);
         List<Acao> acoes = List.of(
-                new PlantioMudas(1, "P", "d", d, 10, 10),            // 5 + 2*10 = 25
-                new MutiraoReciclagem(2, "M", "d", d, 10, 3),        // 4*3 = 12
-                new OficinaEcologica(3, "O1", "d", d, 10, 2, true),  // 3*2 + 10 = 16
-                new OficinaEcologica(4, "O2", "d", d, 10, 2, false)  // 3*2 = 6
+                new PlantioMudas(1, "P", "d", d, 10, 10),            
+                new MutiraoReciclagem(2, "M", "d", d, 10, 3),        
+                new OficinaEcologica(3, "O1", "d", d, 10, 2, true),  
+                new OficinaEcologica(4, "O2", "d", d, 10, 2, false)  
         );
         int[] esperado = {25, 12, 16, 6};
         for (int i = 0; i < acoes.size(); i++) {
@@ -42,8 +42,8 @@ class ImpactaTest {
         sistema.cadastrarVoluntario("Carla", "carla@x.com", "3");
         sistema.cadastrarVoluntario("Daniel", "daniel@x.com", "4");
 
-        int plantio = sistema.cadastrarPlantio("Plantio", "d", DATA, 5, 10); // 25
-        int mutirao = sistema.cadastrarMutirao("Mutirão", "d", DATA, 5, 3);  // 12
+        int plantio = sistema.cadastrarPlantio("Plantio", "d", DATA, 5, 10); 
+        int mutirao = sistema.cadastrarMutirao("Mutirão", "d", DATA, 5, 3);  
 
         sistema.inscreverVoluntario("carla@x.com", plantio);
         sistema.inscreverVoluntario("bruno@x.com", mutirao);
