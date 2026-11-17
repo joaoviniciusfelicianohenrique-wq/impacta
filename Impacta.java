@@ -95,7 +95,7 @@ public class Impacta {
     public boolean inscreverVoluntario(String emailVoluntario, int idAcao) {
         Voluntario v = buscarVoluntario(emailVoluntario);
         Acao a = buscarAcao(idAcao);
-        a.inscrever(v); // lança InscricaoDuplicadaException ou AcaoLotadaException
+        a.inscrever(v); 
         return true;
     }
 
